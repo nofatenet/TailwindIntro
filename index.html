@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/extra.css">
+    <title>WURSTIFY Web Landing Page</title>
+</head>
+<body class="bg-gray-200">
+    <!-- For Educational Purposes there will be many comments here, enjoy! :) -->
+
+    <!-- NAV BAR -->
+    <!-- "relative" because there'll be a Hamburger, "container" will apply the screen-breaks as defined in the config -->
+    <!-- "mx-auto" is to center it(margin auto on x-axis), "p-6" i padding -->
+    <nav class="relative container mx-auto p-6">
+
+        <!-- Flex Container -->
+        <!-- "lg:max-w-7xl" is setting some max-limit to width when screens are just to damn wide -->
+        <div class="flex items-center justify-between lg:max-w-7xl">
+
+            <!-- LOGO -->
+            <div>
+                <a href="index.html">
+                    <img src="img/wurstify-logo1.png" alt="logo">
+                </a>
+            </div>
+
+            <!-- MENU ITEMS -->
+            <!-- "hidden" to not display on small screens, but "md:flex" for flex on medium and above! it's the mobile first approach -->
+            <!-- "space-x" is the x-axis space between the items -->
+            <ul class="hidden md:flex space-x-6">
+                <!-- with TW you can simply add the hover state into the class. Remember: The color-variables are in the "tailwind.config.js" -->
+                <li>
+                    <a href="#" class="hover:text-darkPaleBlue">News</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-darkPaleBlue">Products</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-darkPaleBlue">Interact</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-darkPaleBlue">About Us</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-darkPaleBlue">Contact</a>
+                </li>
+            </ul>
+            <!-- BUTTON -->
+            <a href="#" class="hidden md:block p-3 px-6 pt-2 text-white bg-darkGreen rounded-full baseline hover:bg-brightGreen">
+                Join Now
+            </a>
+
+            <!-- HAMBURGER -->
+            <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div class="md:hidden">
+            <!-- Usually there should be a "flex" class in the menu-div, but we add it with the click of the hamburger button! Through JS! So it's OK -->
+            <div id="menu" class="absolute hidden flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="#">Pricing</a>
+                <a href="#">Products</a>
+                <a href="#">About Us</a>
+                <a href="#">Jobs</a>
+                <a href="#">Community</a>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <!-- FLEX CONTAINER -->
+        <!-- "flex-col-reverse" is for making the right side be on top on smaller than md screens -->
+        <div class="container flex flex-col-reverse md:flex-row items-center px-6 mb-24 mx-auto mt-10 space-y-0 md:space-y-0">
+            
+            <!-- Left Side of HERO -->
+            <div class="flex flex-col space-y-12 md:w-1/2">
+                <h1 class="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left">
+                    Join WURSTIFY and start making great products!
+                </h1>
+                <p class="max-w-sm text-center text-darkPaleBlue md:text-left">
+                    We have a business plan to make it simple for software teams to organise their daily tasks.
+                    So let's work together smart, not hard!
+                </p>
+                <div class="flex justify-content md:justify-start">
+                    <a href="#" class="p-3 px-6 pt-2 text-white bg-darkGreen rounded-full baseline hover:bg-brightGreen">
+                        Join Now</a>
+                </div>
+            </div>
+
+            <!-- Right Side of HERO -->
+            <div class="md:w-1/2">
+                <img src="img/wurstify-hero1.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features">
+        <!-- FLEX CONTAINER -->
+        <div class="container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row">
+            
+            <!-- COMPANY KEY SELLING POINTS -->
+            <div class="flex flex-col space-y-12 md:w-1/2">
+                <h2 class="max-w-md text-4xl font-bold text-center md:text-left">
+                    What makes WURSTIFY so great?
+                </h2>
+                <p class="max-w-sm text-center text-darkPaleBlue ml-4 md:text-left md:ml-0">
+                    Because it's awesome! We provide all the key services your team needs,
+                    without making all things complex and hard to understand. The software we
+                    deliver is individually made for the modern digital needs of the customers.
+                </p>
+            </div>
+
+            <!-- NUMBERED LIST -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+
+                <!-- LIST ITEM 1 -->
+                <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+                    <!-- HEADING -->
+                    <!-- "md:bg-transparent" to make it invisible on md and above screens -->
+                    <div class="rounded-l-full bg-brightGreenSupLight md:bg-transparent">
+                        <div class="flex items-center space-x-2">
+                            <div class="px-4 py-2 text-white rounded-full md:py-1 bg-darkGreen">
+                                1.
+                            </div>
+                            <!-- this h3 is only for small screens -->
+                            <h3 class="text-base font-bold md:hidden">
+                                Customers as "proof of success" (s)
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div>
+                        <!-- this h3 is only for md and bigger screens -->
+                        <h3 class="hidden mb-4 text-lg font-bold md:block">
+                            Customers as "proof of success" (md)
+                        </h3>
+                        <p class="text-darkPaleBlue text-center md:text-left">
+                            See what other people have to say about our products.
+                            They are Great. The are awesome. It's everything you need. Not Want, NEED!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LIST ITEM 2 -->
+                <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+                    <!-- HEADING -->
+                    <!-- "md:bg-transparent" to make it invisible on md and above screens -->
+                    <div class="rounded-l-full bg-brightGreenSupLight md:bg-transparent">
+                        <div class="flex items-center space-x-2">
+                            <div class="px-4 py-2 text-white rounded-full md:py-1 bg-darkGreen">
+                                2.
+                            </div>
+                            <!-- this h3 is only for small screens -->
+                            <h3 class="text-base font-bold md:hidden">
+                                Advanced Systems are READY (s)
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div>
+                        <!-- this h3 is only for md and bigger screens -->
+                        <h3 class="hidden mb-4 text-lg font-bold md:block">
+                            Advanced Systems are READY (md)
+                        </h3>
+                        <p class="text-darkPaleBlue text-center md:text-left">
+                            Did you not always want to change things? Now you can!
+                            You only live once, remember? Maybe you just work too much!
+                            Change something today.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LIST ITEM 3 -->
+                <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+                    <!-- HEADING -->
+                    <!-- "md:bg-transparent" to make it invisible on md and above screens -->
+                    <div class="rounded-l-full bg-brightGreenSupLight md:bg-transparent">
+                        <div class="flex items-center space-x-2">
+                            <div class="px-4 py-2 text-white rounded-full md:py-1 bg-darkGreen">
+                                3.
+                            </div>
+                            <!-- this h3 is only for small screens -->
+                            <h3 class="text-base font-bold md:hidden">
+                                Everything in one place (s)
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div>
+                        <!-- this h3 is only for md and bigger screens -->
+                        <h3 class="hidden mb-4 text-lg font-bold md:block">
+                            Everything in one place (md)
+                        </h3>
+                        <p class="text-darkPaleBlue text-center md:text-left">
+                            To keep everything nice and clean, we have created ways to have
+                            all the work files in one place. That's right, one folder for all the things you need.
+                            Just like with node_modules. Everybody loves it, right?
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SACRIFICES -->
+    <section id="sacrifices">
+        <!-- CONTAINER for Heading and Item Blocks -->
+        <div class="max-w-6xl px-5 mx-auto mt-32 text-center">
+            <!-- HEADING -->
+            <h2 class="text-4xl font-bold text-center">
+                What do Customers say about WURSTIFY?
+            </h2>
+
+            <!-- CONTAINER for ITEM BLOCKS -->
+            <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
+
+                <!-- CUSTOMER BLOCK 1 -->
+                <div class="flex flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3">
+                    <img class="w-16 -mt-14" src="img/avatar-anisha.png" alt="">
+                    <p class="text-lg font-bold">Anisha Li</p>
+                    <p class="text-m text-darkPaleBlue">
+                        "Ich hab's probiert und sofort gemerkt: Da geht ein Guude!"</p>
+                </div>
+
+                <!-- CUSTOMER BLOCK 2 -->
+                <!-- Need a "hidden" for the next 2 customers on small, but "flex" on md and bigger, as "flex". Which, remember has block-style integrated -->
+                <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3 md:flex">
+                    <img class="w-16 -mt-14" src="img/avatar-richard.png" alt="">
+                    <p class="text-lg font-bold">Johnny Bravo</p>
+                    <p class="text-m text-darkPaleBlue">
+                        "Ich hab's auch probiert und halt auch gemerkt: Stimmt! Da geht, glaube ich, ein Guter!"</p>
+                </div>
+
+                <!-- CUSTOMER BLOCK 3 -->
+                <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3 md:flex">
+                    <img class="w-16 -mt-14" src="img/avatar-ali.png" alt="">
+                    <p class="text-lg font-bold">Ali Li</p>
+                    <p class="text-m text-darkPaleBlue">
+                        "Was? Weiss nicht was das ist, sollte ich?"</p>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+            <!-- This one has a hardcoded width "w-32" -->
+            <div class="mx-auto my-16 w-32">
+                <a href="#" class="md:block p-3 px-6 pt-2 text-white bg-darkGreen rounded-full baseline hover:bg-brightGreen">
+                Join Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section id="cta" class="bg-brightGreen">
+        <!-- Flex Container -->
+        <div class="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
+            <!-- HEADING -->
+            <!-- "leading-tight" is for the space between the letters in text -->
+            <h2 class="text-5xl font-bold leading-tight text-center text-white md:text-4xl md:max-w-xl md:text-left">
+                Simple Solution for all your Work
+            </h2>
+            <!-- BUTTON -->
+            <div>
+                <a href="#" class="md:block p-3 px-6 pt-2 text-brightGreen bg-white rounded-full baseline shadow-2xl hover:bg-darkGreen hover:text-white">
+                    Join Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-verydarkGreen">
+        <!-- Flex Container -->
+        <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
+
+            <!-- LOGO and Social Links Container -->
+            <div class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">
+                
+                <div class="mx-auto my-4 text-center text-veryDarkGreen md:hidden">
+                    Copyright &copy; 2022, All Rights Reserved
+                </div>
+
+                <!-- LOGO -->
+                <div>
+                    <img class="h-8" src="img/wurstify-logo1.png" alt="">
+                </div>
+                <!-- Social Links Container -->
+
+                    <ul class="flex justify-center space-x-4">
+                        <li class="mt-4 mb-4 rounded-full hover:bg-brightGreen">
+                            <a href="#">
+                                <img src="img/icon-facebook.svg" alt="facebook">
+                            </a>
+                        </li>
+                        <li class="mt-4 mb-4 rounded-full hover:bg-brightGreen">
+                            <a href="#">
+                                <img src="img/icon-twitter.svg" alt="twitter">
+                            </a>
+                        </li>
+                        <li class="mt-4 mb-4 rounded-full hover:bg-brightGreen">
+                            <a href="#">
+                                <img src="img/icon-youtube.svg" alt="youtube">
+                            </a>
+                        </li>
+                        <li class="mt-4 mb-4 rounded-full hover:bg-brightGreen">
+                            <a href="#">
+                                <img src="img/icon-pinterest.svg" alt="pinterest">
+                            </a>
+                        </li>
+                        <li class="mt-4 mb-4 rounded-full hover:bg-brightGreen">
+                            <a href="#">
+                                <img src="img/icon-instagram.svg" alt="instagram">
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+            <!-- LIST -->
+            <div class="flex justify-around space-x-32">
+                <div class="flex flex-col space-y-3 text-veryDarkGreen">
+                    <a href="#" class="hover:text-brightGreen">Home</a>
+                    <a href="#" class="hover:text-brightGreen">Price</a>
+                    <a href="#" class="hover:text-brightGreen">Products</a>
+                    <a href="#" class="hover:text-brightGreen">About</a>
+                </div>
+            
+                <div class="flex flex-col space-y-3 text-veryDarkGreen">
+                    <a href="#" class="hover:text-brightGreen">Jobs</a>
+                    <a href="#" class="hover:text-brightGreen">Community</a>
+                    <a href="#" class="hover:text-brightGreen">Privacy Policy</a>
+                </div>
+
+            </div>
+
+            <!-- INPUT Container -->
+            <div class="flex flex-col justify-between">
+                <form>
+                    <div class="flex space-x-3">
+                        <input type="text"
+                            class="flex-1 px-4 rounded-full focus:outline-none"
+                            placeholder="Will Send You Mail"
+                        />
+                        <button class="px-6 py-2 text-veryDarkGreen bg-brightGreen rounded-full hover:bg-darkGreen focus:outline-none">
+                            Send
+                        </button>
+                    </div>
+                </form>
+
+                <div class="hidden text-veryDarkGreen md:block">
+                    Copyright &copy; 2022, All Rights Reserved
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
